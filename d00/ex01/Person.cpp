@@ -63,9 +63,9 @@ void 	Person::add_info(void)
 		}
 	}
 	while (birth_year < 1900 || birth_year > 2020);
-	std::cout << "Favorite Food : "; std::getline(std::cin, food);
-	std::cout << "Underwear Color : "; std::getline(std::cin, underwear_color);
-	std::cout << "Darkest Secret : "; std::getline(std::cin, secret);
+	std::cout << "Favorite Food : "; std::cin >> food;
+	std::cout << "Underwear Color : "; std::cin >> underwear_color;
+	std::cout << "Darkest Secret : "; std::cin >> secret;
 }
 
 std::string fix_width(std::string str)
@@ -83,7 +83,7 @@ void	Person::show_index(int i)
 	std::cout << std::internal << std::setfill(' ') << std::setw(10) << i << "|";
 	std::cout << std::internal << std::setfill(' ') << std::setw(10) << fix_width(first) << "|";
 	std::cout << std::internal << std::setfill(' ') << std::setw(10) << fix_width(last) << "|";
-	std::cout << std::internal << std::setfill(' ') << std::setw(10) << fix_width(nick) << "|" << std::endl;
+	std::cout << std::internal << std::setfill(' ') << std::setw(9) << fix_width(nick) << "|" << std::endl;
 }
 
 void	Person::show_person(void)
