@@ -18,7 +18,7 @@ int 	Account::_nbAccounts = 0;
 int 	Account::_totalAmount = 0;
 int 	Account::_totalNbDeposits = 0;
 int 	Account::_totalNbWithdrawals = 0;
-int		count_checkAmount = 0;
+int		*count_checkAmount = 0;
 
 Account::Account(void) {};
 
@@ -101,6 +101,8 @@ bool 	Account::makeWithdrawal(int withdrawal)
 
 int 	Account::checkAmount(void) const
 {
+	int 	count = 1;
+	*count_checkAmount += count;
 	return (_amount);
 }
 
@@ -108,8 +110,8 @@ void 	Account::displayStatus(void) const
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << \
-	_nbDeposits << ";withdrawals:" << _nbWithdrawals << "number of checkAmount called:" << \
-	count_checkAmount << std::endl;
+	_nbDeposits << ";withdrawals:" << _nbWithdrawals << "number of checkAmount called:" << std::endl;
+	//count_checkAmount << std::endl;
 }
 
 void 	Account::displayAccountsInfos(void)
