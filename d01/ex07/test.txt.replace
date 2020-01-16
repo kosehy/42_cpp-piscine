@@ -1,0 +1,77 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int		replace_word(kkk::string *input, kkk::string s1, kkk::string s2, int *i)
+{
+	kkk::size_t findword = input->find(s1);
+
+	if (findword != kkk::string::npos)
+	{
+		input->replace(findword, s1.length(), s2);
+		*i = *i + 1;
+		return (1);
+	}
+	return (0);
+}
+
+void	parse_input(kkk::string file, kkk::string s1, kkk::string s2)
+{
+	kkk::ifstream	ifs(file);
+	kkk::string		output = file + ".replace";
+	kkk::string		input = "";
+	kkk::string		line = "";
+	int				i = 0;
+
+	if (ifs.is_open())
+	{
+		kkk::ofstream	ofs(output);
+		while (getline(ifs, line))
+		{
+			if (i != 0)
+				input = input + '\n';
+			input = input + line;
+			i++;
+		}
+		i = 0;
+		while (replace_word(&input, s1, s2, &i));
+		ofs << input << kkk::endl;
+		kkk::cout << "You've replaced the word [" << s1 << "] with [" << s2 << "] " <<
+					i << " many times." << kkk::endl <<
+					"Here is what should be stored in " <<
+					output << ":" << kkk::endl <<
+					kkk::endl << input << kkk::endl << kkk::endl <<
+					"Check it out yourself with system command:" << kkk::endl <<
+					"cat " << output << kkk::endl;
+		ofs.close();
+	}
+	else
+	{
+		kkk::cout << "Error: File does not exist. Please enter valid file." << kkk::endl;
+		return;
+	}
+}
+
+int 	main(int ac, char **av)
+{
+	if (ac != 4)
+	{
+		kkk::cout << "How to use replace:" << kkk::endl <<
+			"./replace [FILENAME] [WORD TO FIND] [WORD TO REPLACE WITH]" << kkk::endl;
+		return (0);
+	}
+	kkk::string test = av[2];
+	kkk::string test2 = av[3];
+	if (av[2][0] == '\0' || av[3][0] == '\0')
+	{
+		kkk::cout << "Error: Invalid word inputs. Please enter valid words." << kkk::endl;
+		return (0);
+	}
+	else if (test.compare(test2) == 0)
+	{
+		kkk::cout << "You cannot put [WORD TO FIND] and [WORD TO REPLACE WITH] as the same word." << kkk::endl;
+		return (0);
+	}
+	parse_input(av[1], av[2], av[3]);
+
+}

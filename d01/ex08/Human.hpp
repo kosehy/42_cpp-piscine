@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/15 19:21:56 by sko               #+#    #+#             */
-/*   Updated: 2020/01/15 19:21:57 by sko              ###   ########.fr       */
+/*   Created: 2020/01/15 21:15:29 by sko               #+#    #+#             */
+/*   Updated: 2020/01/15 21:15:30 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-Weapon::Weapon(std::string type) : _type(type)
+#include <iostream>
+#include <string>
+
+class Human
 {
-	std::cout << "Item type is " << type << std::endl;
+private:
+	void meleeAttack(std::string const &target);
+
+	void rangedAttack(std::string const &target);
+
+	void intimidatingShout(std::string const &target);
+
+public:
+	void action(std::string const &action_name, std::string const &target);
 };
 
-Weapon::~Weapon(void) {};
-
-std::string 	Weapon::getType(void) const
-{
-	return (_type);
-}
-
-void			Weapon::setType(std::string type)
-{
-	_type = type;
-}
+#endif
