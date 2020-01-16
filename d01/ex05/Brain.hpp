@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 23:38:27 by sko               #+#    #+#             */
-/*   Updated: 2020/01/14 23:38:28 by sko              ###   ########.fr       */
+/*   Created: 2020/01/15 16:53:34 by sko               #+#    #+#             */
+/*   Updated: 2020/01/15 16:53:34 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 #include <iostream>
-#include <string>
+#include <sstream>
 
-class Zombie
+
+class Brain
 {
 private:
-	std::string 	_type;
-	std::string 	_name;
 
 public:
-	Zombie(std::string name, std::string type);
-	~Zombie(void);
+	Brain(void);
+	~Brain(void);
 
-	void	announce(void);
+	std::string	identify(void);
 };
 
 #endif

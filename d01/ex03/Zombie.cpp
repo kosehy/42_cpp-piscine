@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 23:38:36 by sko               #+#    #+#             */
-/*   Updated: 2020/01/14 23:38:37 by sko              ###   ########.fr       */
+/*   Created: 2020/01/14 23:38:20 by sko               #+#    #+#             */
+/*   Updated: 2020/01/14 23:38:21 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "Zombie.hpp"
 
-ZombieEvent::ZombieEvent(void)
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)
 {
-	_type = "none";
+	std::cout << _name << " has been spawned" << std::endl;
+	return ;
+}
+// initialize
+Zombie::Zombie() {};
+
+Zombie::~Zombie(void)
+{
+	std::cout << _name << " has died" << std::endl;
+	return ;
 }
 
-ZombieEvent::~ZombieEvent(void) {}
-
-void	ZombieEvent::setZombieType(std::string type)
+void	Zombie::announce(void)
 {
-	_type = type;
-};
-
-Zombie*	ZombieEvent::newZombie(std::string name)
-{
-	Zombie*	zombie = new Zombie(name, _type);
-	return (zombie);
+	std::cout << "<" << _name << "(" << _type << ")> Braiiiiiiinnnssss...." << std::endl;
+	return ;
 }

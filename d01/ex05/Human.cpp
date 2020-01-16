@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 23:38:27 by sko               #+#    #+#             */
-/*   Updated: 2020/01/14 23:38:28 by sko              ###   ########.fr       */
+/*   Created: 2020/01/15 16:53:42 by sko               #+#    #+#             */
+/*   Updated: 2020/01/15 16:53:43 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <Human.hpp>
 
-#include <iostream>
-#include <string>
-
-class Zombie
+Human::Human(void)
 {
-private:
-	std::string 	_type;
-	std::string 	_name;
-
-public:
-	Zombie(std::string name, std::string type);
-	~Zombie(void);
-
-	void	announce(void);
+	_brain = new Brain();
 };
 
-#endif
+Human::~Human(void)
+{
+	delete _brain;
+};
+
+std::string 	Human::identify(void)
+{
+	return (_brain->identify());
+}
+
+Brain&			Human::getBrain(void)
+{
+	return (*_brain);
+}

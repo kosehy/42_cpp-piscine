@@ -24,6 +24,7 @@ private:
 
 public:
 	Zombie(std::string name, std::string type);
+	Zombie();
 	~Zombie(void);
 
 	void	announce(void);

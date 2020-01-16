@@ -10,4 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)
+{
+	std::cout << _name << " has been spawned" << std::endl;
+	return ;
+}
+
+Zombie::~Zombie(void)
+{
+	std::cout << _name << " has died" << std::endl;
+	return ;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << "<" << _name << "(" << _type << ")> Braiiiiiiinnnssss...." << std::endl;
+	return ;
+}
