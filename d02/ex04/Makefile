@@ -10,16 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME = eval_expr
 PPFLAG = -Wall -Wextra -Werror
 COMP = clang++ $(PPFLAG)
 FILE = *.cpp
-HDRS = *.hpp
 
 all : $(NAME)
 
 $(NAME):
-	@$(COMP) $(FILE) $(HDRS) -o $(NAME)
+	@$(COMP) $(FILE) -o $(NAME)
 
 clean:
 	@rm -rf *.gch

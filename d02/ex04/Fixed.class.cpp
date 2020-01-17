@@ -12,7 +12,12 @@ Fixed::Fixed(const int fp) : _fp(fp << _bit)
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float fp) : _fp(fp * ( 1 << _bit))
+Fixed::Fixed(const double fp) : _fp(fp * (1 << _bit))
+{
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float fp) : _fp(roundf(fp * ( 1 << _bit)))
 {
 	std::cout << "Float constructor called" << std::endl;
 }
@@ -178,7 +183,7 @@ void 	checkInput(char *s)
 	}
 }
 
-char 	*cleanSapces(char *str)
+char 	*cleanSpaces(char *str)
 {
 	int 	n = 0;
 
