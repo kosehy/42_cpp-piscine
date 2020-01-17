@@ -163,8 +163,8 @@ void 	checkInput(char *s)
 
 	for (size_t i = 0; i < strlen(s); ++i)
 	{
-		if (!isdigit(s[i] && !isspace(s[i]) && \
-			s[i] != '.' && s[i] != '+' && s[i] != '-' && s[i] != '*' && s[i] != '/'))
+		if (!isdigit(s[i]) && !isspace(s[i]) && \
+			s[i] != '.' && s[i] != '+' && s[i] != '-' && s[i] != '*' && s[i] != '/')
 		{
 			if (s[i] == '(')
 				++bracket;
