@@ -6,14 +6,15 @@
 // Canonical Member Function
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	_hp = 100;
-	_maxhp = 100;
+	_name = name;
+	this->_hp = 100;
+	this->_maxhp = 100;
 	_ep = 100;
 	_maxep = 100;
 	_lvl = 1;
 	_mad = 30;
-	_rad = 20;
-	_adr = 5;
+	this->_rad = 20;
+	this->_adr = 5;
 	std::cout << name << "(Type: Frag): Created!" << std::endl;
 	srand(time(NULL));
 };

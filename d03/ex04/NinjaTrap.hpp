@@ -5,7 +5,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
 public:
 	// Canonical Member Functions
@@ -27,6 +27,11 @@ public:
 	void	ninjaShoebox(FragTrap const &target);
 	void	ninjaShoebox(ScavTrap const &target);
 	void	ninjaShoebox(NinjaTrap const &target);
+
+private:
+	int		_ep;
+	int		_maxep;
+	int		_mad;
 };
 
 #endif

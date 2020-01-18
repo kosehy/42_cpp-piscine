@@ -6,6 +6,7 @@
 // Canonical Member Function
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 {
+	_name = name;
 	_hp = 60;
 	_maxhp = 60;
 	_ep = 120;

@@ -21,8 +21,16 @@ public:
 	// Member Functions
 	using	NinjaTrap::meleeAttack;
 	using	FragTrap::rangedAttack;
-	using	NinjaTrap::ninjaShoebox(NinjaTrap const &target);
-	using	FragTrap::vaulthunter_dot_ext;
+	using	NinjaTrap::ninjaShoebox;
+	using	FragTrap::vaulthunter_dot_exe;
+private:
+	int		_hp;
+	int		_maxhp;
+	int		_ep;
+	int		_maxep;
+	int		_mad;
+	int		_rad;
+	int		_adr;
 };
 
 #endif
