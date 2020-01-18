@@ -25,7 +25,7 @@ public:
 	Sorcerer(void);
 	Sorcerer(std::string name, std::string title);
 	Sorcerer(const Sorcerer &old);
-	~Sorcerer(void);
+	virtual ~Sorcerer(void);
 
 	// Operator Overloads
 	Sorcerer	&operator = (const Sorcerer &old);

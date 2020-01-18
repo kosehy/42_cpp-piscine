@@ -22,17 +22,20 @@ class Peon : public Victim
 public:
 	// Constructors
 	Peon(void);
-	Peon(const Peon &src);
 	Peon(std::string name);
+	Peon(Peon &src);
 	// Destructors
-	~Peon(void);
+	virtual ~Peon(void);
 	// Operators
 	Peon	&operator = (const Peon &old);
 	// Get methods
-	virtual void	getPolymorphed(void) const;
+	std::string	getName(void) const;
+	void	getPolymorphed(void) const;
 
 private:
 	std::string _name;
 };
+
+std::ostream	&operator << (std::ostream &output, Peon const &old);
 
 #endif

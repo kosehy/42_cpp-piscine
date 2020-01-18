@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   Dust.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/17 22:53:16 by sko               #+#    #+#             */
-/*   Updated: 2020/01/17 22:53:18 by sko              ###   ########.fr       */
+/*   Created: 2020/01/17 22:53:33 by sko               #+#    #+#             */
+/*   Updated: 2020/01/17 22:53:34 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_HPP
-#define VICTIM_HPP
+#ifndef DUST_HPP
+#define DUST_HPP
 
 #include <string>
 #include <iostream>
-#include <sstream>
+#include "Victim.hpp"
 
-class Victim {
+class Dust : public Victim
+{
 public:
 	// Constructors
-	Victim(void);
-	Victim(std::string name);
-	Victim(const Victim &old);
+	Dust(void);
+	Dust(std::string name);
+	Dust(Dust &src);
 	// Destructors
-	virtual ~Victim(void);
+	virtual ~Dust(void);
 	// Operators
-	Victim &operator = (const Victim &old);
-	// Get Functions
-	std::string getName(void) const;
-	virtual void getPolymorphed(void) const;
+	Dust	&operator = (const Dust &old);
+	// Get methods
+	std::string	getName(void) const;
+	void	getPolymorphed(void) const;
 
-protected:
+private:
 	std::string _name;
 };
 
-std::ostream	&operator << (std::ostream & out, const Victim &old);
+std::ostream	&operator << (std::ostream &output, Dust const &old);
 
 #endif

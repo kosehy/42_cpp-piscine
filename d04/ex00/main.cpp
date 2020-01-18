@@ -15,6 +15,7 @@
 #include "Peon.hpp"
 #include "Victim.hpp"
 #include "Sorcerer.hpp"
+#include "Dust.hpp"
 
 int main(void)
 {
@@ -23,11 +24,13 @@ int main(void)
 
 	Victim		jim("Jimmy");
 	Peon		joe("Joe");
+	Dust		kim("Kim");
 
-	std::cout << robert << jim << joe;
+	std::cout << robert << jim << joe << kim;
 
 	robert.polymorph(jim);
 	robert.polymorph(joe);
+	robert.polymorph(kim);
 
 	return (0);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.cpp                                           :+:      :+:    :+:   */
+/*   Dust.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,47 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Dust.hpp"
 
-Peon::Peon(std::string name) : Victim(name)
+Dust::Dust(std::string name) : Victim(name)
 {
 	this->_name = name;
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "I'm Dust !" << std::endl;
 	return ;
 }
 
-Peon::Peon(Peon &old) : Victim(old)
+Dust::Dust(Dust &old) : Victim(old)
 {
 	*this = old;
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "I'm Dust !" << std::endl;
 }
 
-Peon::~Peon(void)
+Dust::~Dust(void)
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << "Ah..." << std::endl;
 	return ;
 }
 
-Peon	&Peon::operator = (const Peon &old)
+Dust	&Dust::operator = (const Dust &old)
 {
 	if (this != &old)
 		this->_name = old._name;
 	return (*this);
 }
 
-std::string		Peon::getName(void) const
+std::string		Dust::getName(void) const
 {
 	return (this->_name);
 }
 
-std::ostream	&operator << (std::ostream &output, Peon const &old)
+std::ostream	&operator << (std::ostream &output, Dust const &old)
 {
-	output << "I'm " << old.getName() << " and I like otters !" << std::endl;
+	output << "I'm " << old.getName() << " and I like chocolate !" << std::endl;
 	return (output);
 }
 
-void	Peon::getPolymorphed(void) const
+void	Dust::getPolymorphed(void) const
 {
-	std::cout << this->_name << " has been turned into a pink pony !" << std::endl;
+	std::cout << this->_name << " has been turned into a yellow stone !" << std::endl;
 	return ;
 }

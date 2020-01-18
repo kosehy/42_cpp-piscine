@@ -11,13 +11,7 @@
 /* ************************************************************************** */
 
 #include "Victim.hpp"
-
-Victim::Victim(void)
-{
-	this->_name = "";
-	std::cout << "" << std::endl;
-	return ;
-}
+#include "Peon.hpp"
 
 Victim::Victim(std::string name) : _name(name)
 {

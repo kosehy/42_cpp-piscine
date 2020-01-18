@@ -12,13 +12,6 @@
 
 #include "Sorcerer.hpp"
 
-Sorcerer::Sorcerer(void)
-{
-	this->_name = "";
-	this->_title = "";
-	std::cout << this->_name << ", " << this->_title << ",is born !" << std::endl;
-}
-
 Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(title)
 {
 	std::cout << name << ", " << title << ",is born !" << std::endl;
