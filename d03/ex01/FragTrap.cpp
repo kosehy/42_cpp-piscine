@@ -3,10 +3,17 @@
 #define ATK_NUM 5
 
 // Canonical Member Function
-FragTrap::FragTrap(std::string name) : _name(name), _hp(100), _maxhp(100), _ep(100), _maxep(100),\
-										_lvl(1), _mad(30), _rad(20), _adr(5)
+FragTrap::FragTrap(std::string name)
 {
-	std::cout << _name << "(Type: Frag): Created!" << std::endl;
+	_name = name;
+	_hp = 100;
+	_maxhp = 100;
+	_ep = 100;
+	_maxep = 100;
+	_lvl = 1;
+	_mad = 30;
+	_rad = 20;
+	_adr = 5;
 	srand(time(NULL));
 };
 FragTrap::FragTrap(void) {};

@@ -3,9 +3,17 @@
 #define ATK_NUM 5
 
 // Canonical Member Function
-ScavTrap::ScavTrap(std::string name) : _name(name), _hp(100), _maxhp(100), _ep(50), _maxep(50),\
-										_lvl(1), _mad(20), _rad(15), _adr(3)
+ScavTrap::ScavTrap(std::string name)
 {
+	_name = name;
+	_hp = 100;
+	_maxhp = 100;
+	_ep = 50;
+	_maxep = 50;
+	_lvl = 1;
+	_mad = 20;
+	_rad = 15;
+	_adr = 3;
 	std::cout << _name << "(Type: Scav): " << "Finish!" << std::endl;
 	srand(time(NULL));
 };
