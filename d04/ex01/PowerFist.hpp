@@ -5,6 +5,7 @@
 
 class PowerFist : public AWeapon
 {
+public:
 	PowerFist(void);
 	PowerFist(PowerFist &obj);
 	virtual ~PowerFist(void);

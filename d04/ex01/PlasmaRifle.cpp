@@ -2,7 +2,7 @@
 
 PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21) {}
 
-PlasmaRifle::PlasmaRifle(PlasmaRifle &obj)
+PlasmaRifle::PlasmaRifle(PlasmaRifle &obj) : AWeapon(obj)
 {
 	*this = obj;
 }
@@ -17,5 +17,5 @@ PlasmaRifle	&PlasmaRifle::operator = (PlasmaRifle const &rhs)
 
 void	PlasmaRifle::attack(void) const
 {
-	std::cout << "* Tang Tang * " << std::endl;
+	std::cout << "* piouuu piouuu piouuu * " << std::endl;
 }

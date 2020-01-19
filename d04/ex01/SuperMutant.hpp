@@ -5,6 +5,7 @@
 
 class SuperMutant : public Enemy
 {
+public:
 	SuperMutant(void);
 	SuperMutant(SuperMutant const &ojb);
 	virtual ~SuperMutant(void);

@@ -9,10 +9,9 @@ Character::Character(Character &obj)
 
 Character::~Character(void) {}
 
-
-Character	&Character::operater = (Character &obj)
+Character	&Character::operator = (Character const &obj)
 {
-	this->name = obj.getName();
+	this->_name = obj.getName();
 	this->_weapon = obj._weapon;
 	this->_ap = obj._ap;
 	return (*this);
@@ -49,13 +48,25 @@ void		Character::attack(Enemy *enemy)
 		return ;
 	if (this->_weapon)
 	{
-		if (this->_ap != 0 && (this->_ap >= >= this->_weapon->getAPCost())
+		if (this->_ap != 0 && (this->_ap >= this->_weapon->getAPCost()))
 		{
 			std::cout << this->_name << " attacks " << enemy->getType() << " with a " << \
 			this->_weapon->getName() << std::endl;
 			this->_weapon->attack();
 			enemy->takeDamage(this->_weapon->getDamage());
-			this->_ap = this->_ap - 
+			this->_ap = this->_ap - this->_weapon->getAPCost();
+			if (enemy->getHP() <= 0)
+				delete enemy;
 		}
 	}
+	return ;
+}
+
+std::ostream	&operator << (std::ostream &output, Character const &rhs) {
+	if (rhs.getWeapon())
+		output << rhs.getName() << " has " << rhs.getAP() << " AP and wields a " << rhs.getWeapon()->getName()
+			   << std::endl;
+	else
+		output << rhs.getName() << " has " << rhs.getAP() << " AP and is unarmed" << std::endl;
+	return (output);
 }

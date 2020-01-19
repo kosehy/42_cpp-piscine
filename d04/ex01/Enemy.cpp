@@ -11,8 +11,8 @@ Enemy::~Enemy(void) {}
 
 Enemy	&Enemy::operator = (Enemy const &obj)
 {
-	this->_hp = obj.getHP();
-	this->_type = obj.getType();
+	this->_hp = obj._hp;
+	this->_type = obj._type;
 	return (*this);
 }
 

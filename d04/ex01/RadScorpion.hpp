@@ -5,6 +5,7 @@
 
 class RadScorpion : public Enemy
 {
+public:
 	RadScorpion(void);
 	RadScorpion(RadScorpion const &ojb);
 	virtual ~RadScorpion(void);

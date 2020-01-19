@@ -5,6 +5,7 @@
 
 class PlasmaRifle : public AWeapon
 {
+public:
 	PlasmaRifle(void);
 	PlasmaRifle(PlasmaRifle &obj);
 	virtual ~PlasmaRifle(void);
