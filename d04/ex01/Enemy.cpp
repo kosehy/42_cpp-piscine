@@ -1,6 +1,10 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(int hp, std::string const &type) : _hp(hp), _type(type) {}
+Enemy::Enemy(int hp, std::string const &type)
+{
+	_hp = hp;
+	_type = type;
+}
 
 Enemy::Enemy(Enemy const &obj)
 {
