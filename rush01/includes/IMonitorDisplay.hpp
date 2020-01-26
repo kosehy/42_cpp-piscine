@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   IMonitorDisplay.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 23:03:16 by sko               #+#    #+#             */
-/*   Updated: 2020/01/25 17:36:30 by sko              ###   ########.fr       */
+/*   Created: 2020/01/25 12:32:33 by sko               #+#    #+#             */
+/*   Updated: 2020/01/25 12:32:36 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#ifndef IMONITORDISPLAY_HPP
+# define IMONITORDISPLAY_HPP
 
-#include <iostream>
-#include <string>
+# include <Gkrellm.hpp>
 
-class Pony
+class IMonitorDisplay
 {
-	private:
-		std::string		_name;
-		std::string		_type;
+public:
 
-	public:
-		Pony(std::string name, std::string type);
-		~Pony(void);
+	IMonitorDisplay(void);
+	virtual ~IMonitorDisplay(void);
 
-		void	type(void);
+	virtual void		refreshOutput(void) = 0;
+	virtual void		renderOutput(void) = 0;
+
+private:
+
+	IMonitorDisplay(IMonitorDisplay const &obj);
+	IMonitorDisplay	&operator=(IMonitorDisplay const &r);
 };
 
 #endif

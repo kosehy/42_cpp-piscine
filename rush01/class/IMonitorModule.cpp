@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   IMonitorModule.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 23:03:16 by sko               #+#    #+#             */
-/*   Updated: 2020/01/25 17:36:30 by sko              ###   ########.fr       */
+/*   Created: 2020/01/25 12:31:51 by sko               #+#    #+#             */
+/*   Updated: 2020/01/25 12:31:52 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include <Gkrellm.hpp>
 
-#include <iostream>
-#include <string>
-
-class Pony
+IMonitorModule::IMonitorModule(void)
 {
-	private:
-		std::string		_name;
-		std::string		_type;
+	return;
+}
 
-	public:
-		Pony(std::string name, std::string type);
-		~Pony(void);
+IMonitorModule::~IMonitorModule(void)
+{
+	return;
+}
 
-		void	type(void);
-};
-
-#endif

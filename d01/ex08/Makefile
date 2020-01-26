@@ -5,21 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sko <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/15 16:36:20 by sko               #+#    #+#              #
-#    Updated: 2020/01/15 21:15:25 by sko              ###   ########.fr        #
+#    Created: 2020/01/15 20:26:18 by sko               #+#    #+#              #
+#    Updated: 2020/01/25 17:44:13 by sko              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = switch 
+NAME = ex08
 PPFLAG = -Wall -Wextra -Werror
 COMP = clang++ $(PPFLAG)
 FILE = *.cpp
-HDRS = *.hpp
 
 all : $(NAME)
 
 $(NAME):
-	@$(COMP) $(FILE) $(HDRS) -o $(NAME)
+	@$(COMP) $(FILE) -o $(NAME)
 
 clean:
 	@rm -rf *.gch

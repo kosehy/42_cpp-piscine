@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   IMonitorModule.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/14 23:38:27 by sko               #+#    #+#             */
-/*   Updated: 2020/01/25 17:40:12 by sko              ###   ########.fr       */
+/*   Created: 2020/01/25 12:32:49 by sko               #+#    #+#             */
+/*   Updated: 2020/01/25 12:32:50 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef IMONITORMODULE_HPP
+# define IMONITORMODULE_HPP
 
-#include <iostream>
-#include <string>
+# include <Gkrellm.hpp>
 
-class Zombie
+class IMonitorModule
 {
-private:
-	std::string 	_name;
-	std::string 	_type;
-
 public:
-	Zombie(std::string name, std::string type);
-	Zombie();
-	~Zombie(void);
 
-	void	announce(void);
+	IMonitorModule(void);
+	virtual ~IMonitorModule(void);
+
+	virtual void							tick(void) = 0;
+	virtual std::vector<std::string> const	&getOutput(void) const = 0;
+	virtual std::string const				&getName(void) const = 0;
+
+private:
+
+	IMonitorModule(IMonitorModule const &obj);
+	IMonitorModule	&operator=(IMonitorModule const &r);
 };
 
 #endif

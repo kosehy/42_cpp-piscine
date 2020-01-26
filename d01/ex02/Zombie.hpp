@@ -6,7 +6,7 @@
 /*   By: sko <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 23:38:27 by sko               #+#    #+#             */
-/*   Updated: 2020/01/14 23:38:28 by sko              ###   ########.fr       */
+/*   Updated: 2020/01/25 17:38:54 by sko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Zombie
 {
 private:
-	std::string 	_type;
 	std::string 	_name;
+	std::string 	_type;
 
 public:
 	Zombie(std::string name, std::string type);

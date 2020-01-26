@@ -5,25 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sko <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/13 20:27:30 by sko               #+#    #+#              #
-#    Updated: 2020/01/13 21:09:26 by sko              ###   ########.fr        #
+#    Created: 2020/01/13 20:21:17 by sko               #+#    #+#              #
+#    Updated: 2020/01/25 17:35:43 by sko              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phone_book
+NAME = ex02
 PPFLAG = -Wall -Wextra -Werror
 COMP = clang++ $(PPFLAG)
-FILE = *.cpp
-HDRS = *.hpp
+FILE = *cpp
 
 all : $(NAME)
 
-$(NAME):
-	@$(COMP) $(FILE) $(HDRS) -o $(NAME)
+$(NAME) :
+	@$(COMP) $(FILE) -o $(NAME)
 
-clean:
-	@rm -rf *.gch
+clean :
 
-fclean:
-	@rm -f $(NAME)
-re: fclean all
+fclean : clean
+	@rm -rf $(NAME)
+
+re : fclean all
